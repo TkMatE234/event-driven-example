@@ -6,6 +6,7 @@ const app = express();
 
 app.post("/file-write", async (req: Request, res: Response) => {
    const result = await fileQueue.add("writeMessage", "test message");
+   res.end()
 });
 
 app.get("/job-status/:id", async (req: Request, res: Response) => {
